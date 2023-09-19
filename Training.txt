@@ -1,0 +1,143 @@
+Selenium overview / architecture
+	Java code -> driver server -> Browser
+		Whatever the code you run that will try to communicate or control your application in browser
+		But browser could not understand the script
+		So the code will be passed via driver server which can understand the script instructions and interact with your application
+
+	What is Driver server?
+		Driver server is nothing but an exe file which is developed by the respective browser
+		Chrome -> ChromeDriverServer.exe
+		Firefox -> GeckoDriverServer.exe
+		IE -> IEDriverServer.exe
+
+
+		
+		
+Methods and its usage
+	Driver methods:
+		get
+		close
+		quit
+		findElement
+		findElements
+		getCurrentUrl
+		getPageSource
+		getTitle
+		getWindowHandle
+		getWindowHandles
+
+	Webelement methods:
+		click
+		clear
+		sendKeys
+		getText
+		getAttribute
+
+	Drop-down methods:
+		selectByValue
+		selectByVisibleText
+		selectByIndex
+		deselectByValue
+		deselectByVisibleText
+		deselectByIndex
+		getOptions
+		getFirstSelectedOption
+		getAllSelectedOptions
+
+	Boolean methods:
+		isDisplayed
+		isElabled
+		isSelected
+
+	Navigation methods:
+		driver.navigate().to("https://www.softwaretestinghelp.com");
+		driver.navigate().back();
+		driver.navigate().forward();
+
+	Alert methods:
+		accept
+		dismiss
+		sendKeys
+		getText
+
+	Actions methods:
+		moveToElement
+		dragAndDrop
+		click
+		doubleClick
+		contextClick
+		build
+		perform
+		
+	Switch-to methods:
+		driver.switchTo().frame
+		driver.switchTo().window
+		driver.switchTo().alert
+
+	Waits methods:  (this is not a full syntax)
+		implicitlyWait
+		ExplicitWait
+		Fluent waits
+
+	Others:
+		pageLoadTimeout
+
+
+
+Xpath:
+	XPATH locator - //tagname[@attName='attVal']
+	top-down search
+		/ - child only - //html/head/meta
+		// - child and grand-child - //html//meta
+	
+	bottom-top
+		parent - parent only - //input[@id='subject']/parent::td
+		ancestor - parent and grand-parent - //input[@id='subject']/ancestor::div
+	
+	search in same level
+		preceding-sibling - element present above but under same parent
+		//a[.='11']/parent::td/preceding-sibling::td
+		
+		following-sibling - element present below but under same parent
+		//a[.='11']/parent::td/following-sibling::td
+	
+	text() or . - locate element based on visible text
+		a[text()='Basic Contact Form']
+		a[.='Basic Contact Form']
+	
+	@ - stands for attribute
+		//input[@id='value_of_id']
+
+	Partial match:
+		starts-with() - locate element by partial matching at beginning
+		//a[starts-with(.,'Basic Contact ')]
+		
+		contains() - locate element by partial matching
+		//a[contains(.,'sic Contact ')]
+
+	Multiple attributes:
+		and - identify element when both attribute matches
+		//input[@type='checkbox' and @name='email_to[]']
+		
+		or - identify element when either of attribute match
+		//input[@type='checkbox' or @name='email_to[]']
+		
+	Others:
+		not - not matching elements (similar to !=)
+		//a[not(contains(text(),'Form'))]
+		
+		| - locate using more than one xpath
+		//input[@type='radio'] | //select
+		
+		* - locate element when tagname is dynamic
+		//*[@id]
+		
+		= != > < >= <= - Comparison operator
+	
+	Select the specific element
+		//input[@type='checkbox'][3]
+		(//input[@type='checkbox'])[position()=3]
+		
+		[last()] - select the last element
+			(//input[@type='checkbox'])[last()]
+			(//input[@type='checkbox'])[last()-1]
