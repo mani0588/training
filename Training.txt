@@ -141,3 +141,32 @@ Xpath:
 		[last()] - select the last element
 			(//input[@type='checkbox'])[last()]
 			(//input[@type='checkbox'])[last()-1]
+			
+			
+Syntax for frames / windows / alerts / waits / screenshots
+	Frames
+		driver.switchTo().frame("iframeResult");
+	Windows
+		String secondID = driver.getWindowHandles().toArray()[1].toString();
+		driver.switchTo().window(secondID);
+	Alert
+		driver.switchTo().alert().getText();
+		driver.switchTo().alert().accept();
+	Waits
+		Implicit wait:
+			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		ExplicitWait:
+			WebDriverWait wait = new WebDriverWait(driver, 60);
+			wait.until(ExpectedConditions.alertIsPresent());
+		FluentWait:
+			will add later
+	Screenshots
+		/ Default screenshots
+		File screen = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		FileHandler.copy(screen, new File("./src/test/resources/Mycontactform.png"));
+
+		// Custom screenshots
+		Shutterbug.shootPage(driver, ScrollStrategy.BOTH_DIRECTIONS, 300)
+				.highlightWithText(driver.findElement(By.id("twotabsearchtextbox")), "Highlight search box")
+				.withName("My contact form - Home Page").save();
+	
