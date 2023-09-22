@@ -186,7 +186,7 @@ TestNG
 			@BeforeTest - Once per <test> tag
 				@BeforeClass - Once per <class> tag + at beginning of the class
 					@BeforeMethod - Once per @Test annotation + at beginning of the @Test
-						@Test - Once per run + at beginning of the execution
+						@Test - Once per declaration
 					@AfterMethos - Once per @Test annotation + at beginning of the @Test
 				@AfterClass - Once per <class> tag + at end of the class
 			@AfterTest - Once per <test> tag
