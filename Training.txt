@@ -170,3 +170,77 @@ Syntax for frames / windows / alerts / waits / screenshots
 				.highlightWithText(driver.findElement(By.id("twotabsearchtextbox")), "Highlight search box")
 				.withName("My contact form - Home Page").save();
 	
+	
+TestNG
+	Overview and purpose
+		It's a automation framework
+		which help us to generates the reports based on the assertions
+		
+	Annotations
+		It's a reserved keyword or annotated interface
+		Starts with @ symbol
+		This controls the order of the execution
+		and controls the repeated tests
+		
+		@BeforeSuite - Once per <suite> tag + at beginning of the execution
+			@BeforeTest - Once per <test> tag
+				@BeforeClass - Once per <class> tag + at beginning of the class
+					@BeforeMethod - Once per @Test annotation + at beginning of the @Test
+						@Test - Once per run + at beginning of the execution
+					@AfterMethos - Once per @Test annotation + at beginning of the @Test
+				@AfterClass - Once per <class> tag + at end of the class
+			@AfterTest - Once per <test> tag
+		@AfterSuite - Once per <suite> tag + at end of the execution
+		
+		Other annotations:
+			@DataProvider
+			@Factory
+			
+	Assertions
+		Assertion is a kind of verification and based on the status it update the test results
+		Two type of asserts
+			Soft Assert - Continue to next step even if the assert fails
+			Hard Assert - Stop and fail the test when assert fails (this will not go to next step)
+			
+	XML suites
+		<?xml version="1.0" encoding="UTF-8"?>
+			<suite name="Mycontact Form" verbose="1"> ============> @BeforeSuite
+				<test name="Regression Test with chrome"> ============> @BeforeTest
+					<classes>
+						<class name="testngPack.CommonAnnotations" /> ============> @BeforeClass and the @AfterClass
+						<class name="testngPack.Scenario1" /> ============> @BeforeClass and the @AfterClass
+						<class name="testngPack.Scenario2" /> ============> @BeforeClass and the @AfterClass
+					</classes>
+				</test> ============> @AfterTest
+				<test name="Regression Test with firefox"> ============> @BeforeTest
+					<classes>
+						<class name="testngPack.CommonAnnotations" /> ============> @BeforeClass and the @AfterClass
+						<class name="testngPack.Scenario1" /> ============> @BeforeClass and the @AfterClass
+						<class name="testngPack.Scenario2" /> ============> @BeforeClass and the @AfterClass
+					</classes>
+				</test> ============> @AfterTest
+			</suite> ============> @AfterSuite
+			
+			Note:
+				<class name="testngPack.CommonAnnotations" />
+				This <class> tag represents actually a Java Class file
+				The Java class file will have many @Test
+				So the inside the <class> tag, the order of the execution will be like below
+					@BeforeMethod
+						@Test ====== Test 1
+					@AfterMethos
+					@BeforeMethod
+						@Test ====== Test 2
+					@AfterMethos
+					
+				So the @BeforeMethod and @AfterMethos will run repeatedly for each @Test
+			
+			
+	Reports
+		TestNG will give us two type of reports
+			Console report
+			Html report
+			
+	DataProvider
+		@DataProvider will run the same @Test repeatedly with different data
+		This is called data driven test
