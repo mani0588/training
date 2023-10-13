@@ -1,0 +1,85 @@
+Testing concepts
+	Types of testing
+		Manual testing / functional testing
+		Automated testing
+			Web automation
+			API automation
+			Back-end / DB automation / ETL automation
+		API testing / Gray box testing
+		Security testing
+		Performance testing / non-functional testing
+			Load testing
+			Stress testing
+			Volume testing
+		Unit tests / component testing / Structural testing / white box testing
+		Black box testing / UI testing
+		Integration tests
+		Functional tests
+		End-to-end tests
+		Acceptance testing
+		Performance testing
+		Smoke testing
+		Sanity testing
+		Exploratory testing
+		Ad-hoc testing / Monkey testing
+		Alpha testing
+		Beta testing
+		Regression testing
+		Re-testing
+
+	Levels of testing
+		Unit testing
+		Integration testing
+		System testing
+		UAT
+
+	Types of methodology
+		Waterfall model
+		V-Model
+		Agile Methodology
+			Scrum team
+			Scrum master
+			Sprint
+			Grooming
+			Daily stand-up / stand-up meeting
+			Sprint planning
+			Sprint Demo
+			Sprint retrospective
+			Story point
+			
+			Task hierarchy:
+				Feature
+				Epic
+				Story
+				Task
+				Sub task
+
+	Test case template
+		Test scenario ID
+		Test scenario
+		Precondition
+		Test case ID
+		Test case
+		Test steps
+		Expected results
+		Actual results
+		Remarks
+		
+	Bug life cycle
+		New
+		In-progress
+		Ready for Test
+		In-Test
+		Fixed / closed
+		Rejected / Re-open
+		
+Others:
+	Test scenario
+	Test strategy
+	Test plan
+	RTM
+	Requirements - SRS, BRD
+	Risk based testing	
+	Testing techniques
+		Boundary Value analysis
+		Equivalence Partitioning
